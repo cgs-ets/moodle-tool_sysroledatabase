@@ -75,7 +75,7 @@ class tool_sysroledatabase_sync {
         $rolefield          = strtolower(trim($this->config->rolefield));
         $removeaction       = trim($this->config->removeaction); // 0 = remove, 1 = keep.
         // Get the roles we're going to sync.
-        $syncroles = $this->config->syncroles;
+        $syncroles = explode(',', $this->config->syncroles);
 
         if (empty($table) || empty($localuserfield) || empty($userfield) ||
             empty($rolefield) || empty($syncroles)) {
@@ -169,11 +169,11 @@ class tool_sysroledatabase_sync {
 
                     if (isset($this->roleassignments[$user->id][$role->id])) {
                         // This role already exists.
-                        $trace->output("System role already assigned: $rowdesc");
+                        $trace->output("Skippping: System role already assigned: $rowdesc", 1);
                         unset($this->roleassignments[$user->id][$role->id]);
                     } else {
                         // Create the role.
-                        $trace->output("Assigning System role: $rowdesc");
+                        $trace->output("Assigning System role: $rowdesc", 1);
                         role_assign($role->id, $user->id, $context->id);
                     }
                 }
@@ -187,7 +187,7 @@ class tool_sysroledatabase_sync {
             foreach ($this->roleassignments as $userid => $roles) {
                 foreach ($roles as $roleid) {
                     $rowdesc = $userid . " => " . $roleid;
-                    $trace->output("Unassigning: $rowdesc");
+                    $trace->output("Unassigning: $rowdesc", 1);
                     role_unassign($roleid, $userid, $context->id);
                 }
             }

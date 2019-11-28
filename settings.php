@@ -96,7 +96,7 @@ if ($hassiteconfig) {
         get_string('settingsheaderlocal', 'tool_sysroledatabase'), ''));
 
     // Get all roles that can be assigned at the user context level and put their id's nicely into the configuration.
-    $roleids = get_roles_for_contextlevels(CONTEXT_COURSECAT);
+    $roleids = get_roles_for_contextlevels(CONTEXT_SYSTEM);
     list($insql, $inparams) = $DB->get_in_or_equal($roleids);
     $sql = "SELECT * FROM {role} WHERE id $insql";
     $roles = $DB->get_records_sql($sql, $inparams);

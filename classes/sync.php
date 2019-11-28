@@ -123,7 +123,7 @@ class tool_sysroledatabase_sync {
         $sql = "SELECT ra.userid, ra.roleid
                   FROM {role_assignments} ra
                  WHERE ra.roleid $rolesql
-                   AND c.contextid = ? ";
+                   AND ra.contextid = ? ";
         $params[] = $context->id;
         $rs = $DB->get_recordset_sql($sql, $params);
 

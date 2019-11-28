@@ -47,7 +47,7 @@ Options:
 -h, --help            Print out this help
 
 Example:
-\$ sudo -u www-data /usr/bin/php admin/tool/catroledatabase/cli/sync.php
+\$ sudo -u www-data /usr/bin/php admin/tool/sysroledatabase/cli/sync.php
 ";
 
     echo $help;
@@ -61,8 +61,8 @@ if (empty($options['verbose'])) {
 }
 
 $result = 0;
-$catroledatabase = new tool_sysroledatabase_sync();
+$sysroledatabase = new tool_sysroledatabase_sync();
 
-$result = $result | $catroledatabase->sync($trace);
+$result = $result | $sysroledatabase->sync($trace);
 
 exit($result);

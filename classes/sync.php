@@ -27,7 +27,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 /**
- * catroledatabase tool class
+ * sysroledatabase tool class
  *
  * @package   tool_sysroledatabase
  * @copyright 2019 Michael Vangelovski, Canberra Grammar School <michael.vangelovski@cgs.act.edu.au>

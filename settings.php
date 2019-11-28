@@ -41,7 +41,7 @@ if ($hassiteconfig) {
     // Add the test settings page.
     $ADMIN->add('tool_sysroledatabase',
             new admin_externalpage('tool_sysroledatabase_test', get_string('testsettings', 'tool_sysroledatabase'),
-                $CFG->wwwroot . '/' . $CFG->admin . '/tool/catroledatabase/test_settings.php'));
+                $CFG->wwwroot . '/' . $CFG->admin . '/tool/sysroledatabase/test_settings.php'));
 
     // General settings.
     $settings->add(new admin_setting_heading('tool_sysroledatabase_settings', '',

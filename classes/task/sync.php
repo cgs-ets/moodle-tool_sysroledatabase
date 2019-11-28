@@ -49,7 +49,7 @@ class sync extends \core\task\scheduled_task {
         } else {
             $trace = new \text_progress_trace();
         }
-        $catroledatabase = new \tool_sysroledatabase_sync();
-        return $catroledatabase->sync($trace);
+        $sysroledatabase = new \tool_sysroledatabase_sync();
+        return $sysroledatabase->sync($trace);
     }
 }

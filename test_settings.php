@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Test catroledatabase settings.
+ * Test sysroledatabase settings.
  *
  * @package   tool_sysroledatabase
  * @copyright 2019 Michael Vangelovski, Canberra Grammar School <michael.vangelovski@cgs.act.edu.au>
@@ -35,8 +35,8 @@ echo $OUTPUT->header();
 echo $OUTPUT->heading(get_string('testsettingsheading', 'tool_sysroledatabase'));
 
 $returnurl = new moodle_url('/admin/settings.php', array('section' => 'tool_sysroledatabase_settings'));
-$catroledatabase = new tool_sysroledatabase_sync();
-$catroledatabase->test_settings();
+$sysroledatabase = new tool_sysroledatabase_sync();
+$sysroledatabase->test_settings();
 
 echo $OUTPUT->continue_button($returnurl);
 echo $OUTPUT->footer();
